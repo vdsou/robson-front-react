@@ -2,6 +2,7 @@
 :root {
   --black: #202b38;
   --border: 0.1rem solid #428dff;
+  --blue: #4B7BEC;
 }
 * {
   box-sizing: border-box;
@@ -25,4 +26,12 @@ html {
 }
 body{
   background: #d1d8e0;
+}
+h1{
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--black);
+}
+.heading{
+  text-align: center;
 }
