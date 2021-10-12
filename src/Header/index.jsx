@@ -9,8 +9,11 @@ export default function Header() {
   };
   return (
     <header className="header">
-      <a href="/" className="logo">robson.bot</a>
-      <img src="images/rob.svg" alt="Logo" />
+      <a href="/" className="logo">
+        robson.bot
+        <span className="blink">_</span>
+      </a>
+      <img src="images/rob.svg" alt="Robot" />
       <div className="menu-button">
         <button type="button" onClick={handleShowMenu}>
           <img src="images/menu.svg" alt="" />
@@ -28,11 +31,11 @@ export default function Header() {
             <h1 className="logo-white">robson.bot</h1>
             <img src="images/rob-white.svg" alt="" />
           </div>
-          <a href="/Commands">Commands</a>
-          <a href="/Users">Users</a>
-          <a href="/Setting">Setting</a>
-          <a href="/Logout">Logout</a>
-          <a href="/About">About</a>
+          <a href="#Commands">Commands</a>
+          <a href="#Users">Users</a>
+          <a href="#Setting">Setting</a>
+          <a href="#Logout">Logout</a>
+          <a href="#About">About</a>
         </div>
       </div>
     </header>

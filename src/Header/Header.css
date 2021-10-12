@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  background: #D1D8E0;
+  background: #d1d8e0;
 }
 .header .logo {
   color: #4b6584;
@@ -16,6 +16,22 @@
   margin-bottom: -0.3rem;
   font-weight: bold;
 }
+.header .logo span {
+  display: inline-block;
+  color: #000;
+  margin-left: 0.5rem;
+  transform: translateY(-10%);
+}
+/* logo cursor animation starts */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blink 1s step-end 0s infinite;
+}
+/* logo cursor animation ends */
 .nav {
   position: absolute;
   left: 0;
@@ -26,10 +42,10 @@
   display: none;
   text-align: center;
 }
-.nav.active{
+.nav.active {
   display: flex;
 }
-.menu-button button{
+.menu-button button {
   background: none;
 }
 .nav .logo-white {
