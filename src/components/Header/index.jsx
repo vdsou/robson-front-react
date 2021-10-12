@@ -1,14 +1,22 @@
 // Header
 import React, { useState } from 'react';
+import Proptypes from 'prop-types';
 import './Header.css';
 
-export default function Header() {
+export default function Header(props) {
   const [showMenu, setShowMenu] = useState(false);
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
   };
+  const { userScroll } = props;
   return (
-    <header className="header">
+    <header
+      className="header"
+      style={{
+        background: `${userScroll ? '#e3e7f2' : 'none'}`,
+        color: '#fff',
+      }}
+    >
       <a href="/" className="logo">
         robson.bot
         <span className="blink">_</span>
@@ -41,3 +49,6 @@ export default function Header() {
     </header>
   );
 }
+Header.propTypes = {
+  userScroll: Proptypes.bool,
+}.isRequired;

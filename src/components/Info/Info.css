@@ -1,20 +1,15 @@
 .info {
   background: var(--blue);
-  position: relative;
+  padding: 0;
 }
 .info h1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   background: #e3e7f2;
   border-top: var(--border);
 }
 .info .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top: 3.4rem;
-  padding-bottom: 1.3rem;
+  padding: 1.3rem 0;
 }
 .info .content p {
   font-size: 1.2rem;
@@ -22,4 +17,17 @@
   color: #d1d8e0;
   text-align: center;
   margin: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .info .content {
+    width: 40%;
+    margin: 0 auto;
+  }
+.info h1 {
+  font-size: 1.5rem;
+}
+  .info .content p {
+    font-size: 1.5rem;
+  }
 }

@@ -5,3 +5,10 @@
   padding-top: 4.1rem;
   padding-bottom: 4.6rem;
 }
+
+@media (min-width: 768px) {
+  .featured h1{
+    font-size: 1.6rem;
+    padding-left: 1.5rem;
+  }
+}
