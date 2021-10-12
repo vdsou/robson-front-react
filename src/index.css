@@ -21,7 +21,7 @@ footer {
 }
 html {
   font-size: 62.5%;
-  overflow: hidden;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 body{
@@ -34,4 +34,5 @@ h1{
 }
 .heading{
   text-align: center;
+  background: #e3e7f2;
 }

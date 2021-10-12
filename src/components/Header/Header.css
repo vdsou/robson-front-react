@@ -31,18 +31,25 @@
   animation: blink 1s step-end 0s infinite;
 }
 /* logo cursor animation ends */
-.nav {
+.app {
+  position: relative;
+}
+.header .nav {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   height: 100vh;
+  z-index: 9999;
   display: none;
   text-align: center;
 }
 .nav.active {
   display: flex;
+}
+.nav.active html {
+  overflow: hidden;
 }
 .menu-button button {
   background: none;
@@ -73,4 +80,43 @@
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+  .header .logo{
+    font-size: 2.5rem;
+  }
+  .header .nav {
+    /* position: initial; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    background: none;
+  }
+  .header .nav a {
+    display: inline;
+    background: none;
+    color:#202B38;
+    font-size: 1.6rem;
+    line-height: 2.0;
+    padding: 0;
+    margin-left: 2rem;
+  }
+  .header .nav a:hover{
+    border-bottom: var(--border);
+  }
+  .right{
+    background: none;
+    width: inherit;
+  }
+  .header .nav .left {
+    display: none;
+  }
+  .top {
+    display: none;
+  }
 }
