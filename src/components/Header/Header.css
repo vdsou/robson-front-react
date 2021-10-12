@@ -4,11 +4,10 @@
   top: 0;
   right: 0;
   height: 4.8rem;
-  border-bottom: 0.1rem solid #428dff;
+  border-bottom: var(--border);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  background: #d1d8e0;
 }
 .header .logo {
   color: #4b6584;
