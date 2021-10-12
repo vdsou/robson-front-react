@@ -1,0 +1,36 @@
+.loginForm {
+  margin-top: 5.3rem;
+  padding: 0;
+}
+.loginForm .heading {
+  border-top: var(--border);
+  font-size: 1.3rem;
+}
+.loginForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.7rem 0;
+}
+.loginForm form input,
+.loginForm form button {
+  background: #a5b1c2;
+  color: var(--black);
+  padding: 0.8rem 1.5rem;
+  margin: 1rem 0;
+  width: 50%;
+}
+.loginForm form button {
+  font-weight: bold;
+  cursor: pointer;
+}
+.loginForm form button:hover {
+  background: var(--blue);
+}
+.loginForm form a {
+  color: var(--blue);
+  font-size: 1.2rem;
+}
+.loginForm form a:hover {
+  border-bottom: var(--border);
+}

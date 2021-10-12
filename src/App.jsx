@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Featured from './components/Featured';
 import Info from './components/Info';
+import LoginForm from './components/LoginForm';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Header userScroll={userScrollY} />
       <Featured />
       <Info />
+      <LoginForm />
     </div>
   );
 }
