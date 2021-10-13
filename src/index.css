@@ -2,7 +2,7 @@
 :root {
   --black: #202b38;
   --border: 0.1rem solid #428dff;
-  --blue: #4B7BEC;
+  --blue: #4b7bec;
 }
 * {
   box-sizing: border-box;
@@ -24,15 +24,15 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-body{
+body {
   background: #d1d8e0;
 }
-h1{
+h1 {
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 2;
   color: var(--black);
 }
-.heading{
+.heading {
   text-align: center;
   background: #e3e7f2;
 }

@@ -12,6 +12,12 @@
   align-items: center;
   margin: 2.7rem 0;
 }
+.loginForm form input::placeholder {
+  color: #778ca3;
+  opacity: 1;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
 .loginForm form input,
 .loginForm form button {
   background: #a5b1c2;
@@ -26,6 +32,7 @@
 }
 .loginForm form button:hover {
   background: var(--blue);
+  color: #fff;
 }
 .loginForm form a {
   color: var(--blue);
@@ -33,4 +40,20 @@
 }
 .loginForm form a:hover {
   border-bottom: var(--border);
+}
+
+@media (min-width: 768px) {
+  .loginForm .heading {
+    font-size: 1.5rem;
+  }
+  .loginForm form input,
+  .loginForm form button {
+    background: #a5b1c2;
+    width: 30%;
+    font-size: 1.5rem;
+    padding: 1.2rem;
+  }
+  .loginForm form a {
+    font-size: 1.5rem;
+  }
 }
