@@ -1,0 +1,35 @@
+.footer {
+  background: var(--blue);
+  min-height: 4.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .content {
+  font-size: 1rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .content .credits a,
+.footer .content p {
+  color: #fff;
+}
+.footer .content .credits a:hover {
+  border-bottom: 0.1rem solid #fff;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    height: 4.5rem;
+    width: 100%;
+  }
+  .footer .content {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
