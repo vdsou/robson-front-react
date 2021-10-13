@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Featured from './components/Featured';
 import Info from './components/Info';
 import LoginForm from './components/LoginForm';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Featured />
       <Info />
       <LoginForm />
+      <Footer />
     </div>
   );
 }
