@@ -1,0 +1,8 @@
+.App{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.App .footer{
+  margin-top: auto;
+}

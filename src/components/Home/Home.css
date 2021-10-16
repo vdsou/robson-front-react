@@ -1,0 +1,29 @@
+.home {
+  margin: 5.3rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.home p {
+  margin: 2rem 0;
+}
+.home ul {
+  margin: 1rem 2rem;
+}
+.home ul li {
+  margin: .7rem 0;
+}
+.home .flag-blue {
+  border-bottom: 0.2rem solid var(--blue);
+}
+.home .flag-red {
+  border-bottom: 0.2rem solid tomato;
+}
+
+@media (min-width: 768px) {
+  .home {
+    font-size: 1.5rem;
+  }
+  .home h1 {
+    font-size: 2rem;
+  }
+}
