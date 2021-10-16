@@ -1,0 +1,21 @@
+.not-found {
+  margin: 5.3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.not-found h1 {
+  font-size: 1.7rem;
+}
+.not-found p {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .not-found h1 {
+    font-size: 1.9rem;
+  }
+  .not-found p {
+    font-size: 1.7rem;
+  }
+}
