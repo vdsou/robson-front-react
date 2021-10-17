@@ -72,16 +72,19 @@
   font-weight: bold;
   line-height: 1.6;
 }
+.nav .logout {
+  color: tomato;
+}
 
 @media (min-width: 768px) {
-  .header{
+  .header {
     display: flex;
     justify-content: space-between;
   }
   .menu-button {
     display: none;
   }
-  .header .logo{
+  .header .logo {
     font-size: 2.5rem;
   }
   .header .nav {
@@ -95,16 +98,19 @@
   .header .nav a {
     display: inline;
     background: none;
-    color:#202B38;
+    color: #202b38;
     font-size: 1.6rem;
-    line-height: 2.0;
+    line-height: 2;
     padding: 0;
     margin-left: 2rem;
   }
-  .header .nav a:hover{
+  .header .nav .logout {
+    color: #e74c3c;
+  }
+  .header .nav a:hover {
     border-bottom: var(--border);
   }
-  .right{
+  .right {
     background: none;
     width: inherit;
   }

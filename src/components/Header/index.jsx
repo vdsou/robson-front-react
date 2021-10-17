@@ -7,7 +7,7 @@ import { Context } from '../../context/AuthContext';
 
 export default function Header(props) {
   const { handleLogout, authenticated } = useContext(Context);
-  console.log(authenticated);
+  console.log('authenticated:', authenticated);
   const [showMenu, setShowMenu] = useState(false);
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
@@ -46,10 +46,12 @@ export default function Header(props) {
           <a href="#Commands">Commands</a>
           <a href="#Users">Users</a>
           <a href="#Setting">Setting</a>
-          <a href="#" onClick={handleLogout}>
-            Logout
-          </a>
           <a href="#About">About</a>
+          {authenticated && (
+            <a className="logout" href="#" onClick={handleLogout}>
+              Logout
+            </a>
+          )}
         </div>
       </div>
     </header>
