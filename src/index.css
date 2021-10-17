@@ -37,3 +37,13 @@ h1 {
   text-align: center;
   background: #e3e7f2;
 }
+/* logo cursor animation starts */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blink 1s step-end 0s infinite;
+}
+/* logo cursor animation ends */

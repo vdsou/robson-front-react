@@ -1,9 +1,13 @@
 // Header
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useContext, useState } from 'react';
 import Proptypes from 'prop-types';
 import './Header.css';
+import { Context } from '../../context/AuthContext';
 
 export default function Header(props) {
+  const { handleLogout, authenticated } = useContext(Context);
+  console.log(authenticated);
   const [showMenu, setShowMenu] = useState(false);
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
@@ -42,7 +46,9 @@ export default function Header(props) {
           <a href="#Commands">Commands</a>
           <a href="#Users">Users</a>
           <a href="#Setting">Setting</a>
-          <a href="#Logout">Logout</a>
+          <a href="#" onClick={handleLogout}>
+            Logout
+          </a>
           <a href="#About">About</a>
         </div>
       </div>
