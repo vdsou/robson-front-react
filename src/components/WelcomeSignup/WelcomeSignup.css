@@ -1,6 +1,5 @@
 .welcome-signup {
   flex-direction: column;
-  text-align: center;
   background: #ecf0f1;
   width: 50%;
   margin: 0 auto;
@@ -10,7 +9,7 @@
   font-size: 1.5rem;
 }
 .welcome-signup p {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 @media (min-width: 768px) {

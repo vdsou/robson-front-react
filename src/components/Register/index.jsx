@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../../context/AuthContext';
+import Error from '../Error';
 import './Register.css';
 
 export default function Register() {
@@ -9,7 +10,10 @@ export default function Register() {
     password: '',
   });
   const { name, username, password } = userData;
-  const { handleSignup } = useContext(Context);
+  const {
+    handleSignup,
+    signupData: { signupSuccess, err },
+  } = useContext(Context);
   const handleInputs = (event) => {
     const { value, name: inputName } = event.target;
     setUserData({
@@ -48,6 +52,7 @@ export default function Register() {
         />
         <button type="submit">Submit</button>
       </form>
+      {!signupSuccess && <Error err={err} />}
     </section>
   );
 }

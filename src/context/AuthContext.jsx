@@ -8,7 +8,19 @@ const Context = createContext();
 function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [signupSuccess, setSignupSuccess] = useState(false);
+  const [signupData, setSignupData] = useState({
+    signupSuccess: true,
+    showWelcome: false,
+    err: '',
+    userData: {
+      name: '',
+      username: '',
+    },
+  });
+  const [loginData, setLoginData] = useState({
+    loginSuccess: true,
+    err: '',
+  });
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -28,11 +40,12 @@ function AuthProvider({ children }) {
         localStorage.setItem('token', JSON.stringify(token));
         api.defaults.headers.authentication = `Bearer ${token}`;
         setAuthenticated(true);
+        setLoginData({ loginSuccess: true });
         history.push('/');
       })
       .catch((err) => {
+        setLoginData({ loginSuccess: false, err });
         setAuthenticated(false);
-        console.log(err);
       });
   };
   const handleLogout = () => {
@@ -58,12 +71,19 @@ function AuthProvider({ children }) {
         password,
       })
       .then(({ data }) => {
-        console.log(data);
-        setSignupSuccess(true);
-        history.push('/welcome');
+        setSignupData({
+          ...signupData,
+          userData: {
+            name: data.saveUser.name,
+            username: data.saveUser.username,
+          },
+          signupSuccess: true,
+          showWelcome: true,
+        });
+        history.push('/login');
       })
       .catch((err) => {
-        console.log(err);
+        setSignupData({ showWelcome: false, err });
       });
   };
 
@@ -72,7 +92,8 @@ function AuthProvider({ children }) {
       value={{
         loading,
         authenticated,
-        signupSuccess,
+        signupData,
+        loginData,
         handleLogin,
         handleLogout,
         handleSignup,
