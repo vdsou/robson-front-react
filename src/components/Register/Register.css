@@ -1,45 +1,60 @@
-.register{
+.signupForm{
   padding: 0;
   margin-top: 5.3rem;
   min-height: 31.5rem;
 }
-.register .heading {
+.signupForm .heading {
     border-top: var(--border);
     font-size: 1.3rem;
   }
-  .register form {
+  .signupForm form {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2.7rem 0;
   }
-  .register form input::placeholder {
+  .signupForm form input::placeholder {
     color: #778ca3;
     opacity: 1;
     font-size: 1.3rem;
     font-weight: bold;
   }
-  .register form input,
-  .register form button {
+  .signupForm form input,
+  .signupForm form button {
     background: #a5b1c2;
     color: var(--black);
     padding: 0.8rem 1.5rem;
     margin: 1rem 0;
     width: 50%;
   }
-  .register form button {
+  .signupForm form button {
     font-weight: bold;
     cursor: pointer;
   }
-  .register form button:hover {
+  .signupForm form button:hover {
     background: var(--blue);
     color: #fff;
   }
-  .register form a {
+  .signupForm form a {
     color: var(--blue);
     font-size: 1.2rem;
   }
-  .register form a:hover {
+  .signupForm form a:hover {
     border-bottom: var(--border);
   }
   
+@media (min-width: 768px) {
+  .signupForm .heading {
+    font-size: 1.5rem;
+  }
+  .signupForm form input,
+  .signupForm form button {
+    background: #a5b1c2;
+    width: 25%;
+    font-size: 1.5rem;
+    padding: 1.2rem;
+  }
+  .signupForm form a {
+    font-size: 1.5rem;
+  }
+}

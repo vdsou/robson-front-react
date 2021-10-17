@@ -1,10 +1,11 @@
 // Login Form
 import React, { useContext, useState } from 'react';
 import { Context } from '../../context/AuthContext';
+import WelcomeSignup from '../WelcomeSignup';
 import './LoginForm.css';
 
 export default function LoginForm() {
-  const { handleLogin } = useContext(Context);
+  const { handleLogin, signupSuccess } = useContext(Context);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const handleUsername = (event) => {
@@ -22,7 +23,11 @@ export default function LoginForm() {
   };
   return (
     <section className="loginForm">
-      <h1 className="heading">If you are an admin please log in</h1>
+      {signupSuccess ? (
+        <WelcomeSignup />
+      ) : (
+        <h1 className="heading">If you are an admin please log in</h1>
+      )}
       <form onSubmit={handleSubmit}>
         <input
           type="text"

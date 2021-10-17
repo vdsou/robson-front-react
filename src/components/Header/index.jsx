@@ -6,8 +6,9 @@ import './Header.css';
 import { Context } from '../../context/AuthContext';
 
 export default function Header(props) {
-  const { handleLogout, authenticated } = useContext(Context);
+  const { handleLogout, authenticated, signupSuccess } = useContext(Context);
   console.log('authenticated:', authenticated);
+  console.log('signupSuccess:', signupSuccess);
   const [showMenu, setShowMenu] = useState(false);
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
