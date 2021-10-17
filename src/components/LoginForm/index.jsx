@@ -1,16 +1,45 @@
 // Login Form
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { Context } from '../../context/AuthContext';
 import './LoginForm.css';
 
 export default function LoginForm() {
+  const { handleLogin } = useContext(Context);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const handleUsername = (event) => {
+    setUsername(event.target.value);
+  };
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleLogin({
+      username,
+      password,
+    });
+  };
   return (
     <section className="loginForm">
       <h1 className="heading">If you are an admin please log in</h1>
-      <form action="">
-        <input type="text" placeholder="USERNAME" />
-        <input type="password" placeholder="PASSWORD" />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="USERNAME"
+          value={username}
+          onChange={handleUsername}
+          required
+        />
+        <input
+          type="password"
+          placeholder="PASSWORD"
+          value={password}
+          onChange={handlePassword}
+          required
+        />
         <button type="submit">ENTER</button>
-        <a href="/">sign up</a>
+        <a href="/register">sign up</a>
       </form>
     </section>
   );

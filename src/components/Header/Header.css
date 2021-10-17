@@ -14,6 +14,7 @@
   font-size: 1.9rem;
   margin-bottom: -0.3rem;
   font-weight: bold;
+  cursor: pointer;
 }
 .header .logo span {
   display: inline-block;
@@ -21,16 +22,6 @@
   margin-left: 0.5rem;
   transform: translateY(-10%);
 }
-/* logo cursor animation starts */
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-.blink {
-  animation: blink 1s step-end 0s infinite;
-}
-/* logo cursor animation ends */
 .app {
   position: relative;
 }
@@ -83,6 +74,10 @@
 }
 
 @media (min-width: 768px) {
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
   .menu-button {
     display: none;
   }
@@ -90,8 +85,8 @@
     font-size: 2.5rem;
   }
   .header .nav {
-    /* position: initial; */
     display: flex;
+    position: initial;
     justify-content: center;
     align-items: flex-end;
     height: 100%;

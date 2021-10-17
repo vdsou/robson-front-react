@@ -1,8 +1,19 @@
 // Home
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
+import api from '../../services/api';
 
 export default function Home() {
+  useEffect(() => {
+    api
+      .get('/commands/get')
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <section className="home">
       <h1>Welcome, User 🗣️</h1>
@@ -25,7 +36,9 @@ export default function Home() {
       <h3>
         Any question? Contact
         {' '}
-        <a href="mailto:vdsouza@outlook.com">vdsou</a>
+        <a href="mailto:vdsouza@outlook.com">
+          vdsou
+        </a>
       </h3>
     </section>
   );
