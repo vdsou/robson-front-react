@@ -4,17 +4,26 @@ import {
 } from 'react-router';
 import PropTypes from 'prop-types';
 
-import LoginForm from '../LoginForm';
 import Home from '../Home';
-import NotFound from '../NotFound';
+import LoginForm from '../LoginForm';
 import Register from '../Register';
+import NotFound from '../NotFound';
+import WelcomeSignup from '../WelcomeSignup';
 
 import history from '../../history';
 
 import { Context } from '../../context/AuthContext';
 
 const CustomRoute = ({ isPrivate, ...rest }) => {
-  const { authenticated } = useContext(Context);
+  const { loading, authenticated } = useContext(Context);
+  if (loading) {
+    return (
+      <h1>
+        baby_bobolete
+        <span className="blink">_</span>
+      </h1>
+    );
+  }
   if (isPrivate && !authenticated) {
     return <Redirect to="/login" />;
   }
@@ -31,6 +40,7 @@ export default function Routes() {
         <CustomRoute component={LoginForm} exact path="/login" />
         <CustomRoute component={Register} exact path="/register" />
         <CustomRoute isPrivate component={Home} exact path="/" />
+        <CustomRoute isPrivate component={WelcomeSignup} exact path="/welcome" />
         <CustomRoute component={NotFound} />
       </Switch>
     </Router>

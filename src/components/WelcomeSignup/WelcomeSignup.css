@@ -1,0 +1,26 @@
+.welcome-signup {
+  flex-direction: column;
+  text-align: center;
+  background: #ecf0f1;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.welcome-signup h1 {
+  font-size: 1.5rem;
+}
+.welcome-signup p {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .welcome-signup {
+    width: 25%;
+  }
+  .welcome-signup h1 {
+    font-size: 2rem;
+  }
+  .welcome-signup p {
+    font-size: 1.5rem;
+  }
+}

@@ -2,8 +2,8 @@ import React, {} from 'react';
 
 export default function index() {
   return (
-    <div>
+    <section>
       <h1>index</h1>
-    </div>
+    </section>
   );
 }

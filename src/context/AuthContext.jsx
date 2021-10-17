@@ -8,6 +8,7 @@ const Context = createContext();
 function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [signupSuccess, setSignupSuccess] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -16,6 +17,7 @@ function AuthProvider({ children }) {
     }
     setLoading(false);
   }, []);
+  // handle user login and logout
   const handleLogin = ({ username, password }) => {
     api
       .post('/users/login', {
@@ -47,10 +49,34 @@ function AuthProvider({ children }) {
       </h1>
     );
   }
+  // handle user registation
+  const handleSignup = ({ name, username, password }) => {
+    api
+      .post('/users/signup', {
+        name,
+        username,
+        password,
+      })
+      .then(({ data }) => {
+        console.log(data);
+        setSignupSuccess(true);
+        history.push('/welcome');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <Context.Provider value={{
-      loading, authenticated, handleLogin, handleLogout,
-    }}
+    <Context.Provider
+      value={{
+        loading,
+        authenticated,
+        signupSuccess,
+        handleLogin,
+        handleLogout,
+        handleSignup,
+      }}
     >
       {children}
     </Context.Provider>
