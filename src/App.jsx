@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { AuthProvider } from './context/AuthContext';
 import { CommandsProvider } from './context/CommandsContext';
+import { LayoutProvider } from './context/LayoutContext';
 
 import Header from './components/Header';
 import Featured from './components/Featured';
@@ -26,17 +27,19 @@ function App() {
   }, []);
 
   return (
-    <AuthProvider>
-      <CommandsProvider>
-        <div className="App">
-          <Header userScroll={userScrollY} />
-          <Featured />
-          <Info />
-          <Routes />
-          <Footer />
-        </div>
-      </CommandsProvider>
-    </AuthProvider>
+    <LayoutProvider>
+      <AuthProvider>
+        <CommandsProvider>
+          <div className="App">
+            <Header userScroll={userScrollY} />
+            <Featured />
+            <Info />
+            <Routes />
+            <Footer />
+          </div>
+        </CommandsProvider>
+      </AuthProvider>
+    </LayoutProvider>
   );
 }
 

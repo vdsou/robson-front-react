@@ -1,10 +1,18 @@
 // Info
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { LayoutContext } from '../../context/LayoutContext';
+
 import './Info.css';
 
 export default function Info() {
+  const { showRobsonStats } = useContext(LayoutContext);
+  console.log('info', showRobsonStats);
+  if (!showRobsonStats) {
+    return null;
+  }
   return (
-    <section className="info">
+    <div className="info">
       <h1 className="heading">RobsonBot Stats</h1>
       <div className="content">
         <p>2 servers</p>
@@ -12,6 +20,6 @@ export default function Info() {
         <p>25 commands</p>
         <p>100 hours up</p>
       </div>
-    </section>
+    </div>
   );
 }
