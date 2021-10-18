@@ -48,7 +48,7 @@ export default function Header(props) {
             <h1 className="logo-white">robson.bot</h1>
             <img src="images/rob-white.svg" alt="" />
           </div>
-          <a href="#Commands">Commands</a>
+          <a href="/commands">Commands</a>
           <a href="#Users">Users</a>
           <a href="#Setting">Setting</a>
           <a href="#About">About</a>

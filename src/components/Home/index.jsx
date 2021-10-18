@@ -1,8 +1,9 @@
 // Home
 import React, { useContext } from 'react';
-import './Home.css';
 
 import { Context } from '../../context/CommandsContext';
+
+import './Home.css';
 
 export default function Home() {
   const { commandsList } = useContext(Context);

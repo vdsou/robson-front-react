@@ -8,6 +8,7 @@ import Home from '../Home';
 import LoginForm from '../LoginForm';
 import Register from '../Register';
 import NotFound from '../NotFound';
+import CommandsList from '../Commands';
 
 import history from '../../history';
 
@@ -39,6 +40,7 @@ export default function Routes() {
         <CustomRoute component={LoginForm} exact path="/login" />
         <CustomRoute component={Register} exact path="/register" />
         <CustomRoute isPrivate component={Home} exact path="/" />
+        <CustomRoute isPrivate component={CommandsList} exact path="/commands" />
         <CustomRoute component={NotFound} />
       </Switch>
     </Router>
