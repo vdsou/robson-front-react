@@ -1,19 +1,12 @@
 // Home
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
 import './Home.css';
-import api from '../../services/api';
+
+import { Context } from '../../context/CommandsContext';
 
 export default function Home() {
-  useEffect(() => {
-    api
-      .get('/commands/get')
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const { commandsList } = useContext(Context);
+  console.log('commandsList', commandsList);
   return (
     <section className="home">
       <h1>Welcome, User 🗣️</h1>
@@ -35,10 +28,7 @@ export default function Home() {
       </ul>
       <h3>
         Any question? Contact
-        {' '}
-        <a href="mailto:vdsouza@outlook.com">
-          vdsou
-        </a>
+        <a href="mailto:vdsouza@outlook.com"> vdsou</a>
       </h3>
     </section>
   );

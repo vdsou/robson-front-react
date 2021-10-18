@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+
 import { AuthProvider } from './context/AuthContext';
+import { CommandsProvider } from './context/CommandsContext';
+
 import Header from './components/Header';
 import Featured from './components/Featured';
 import Info from './components/Info';
 import Footer from './components/Footer';
 import Routes from './components/Router/routes';
+
 import './App.css';
 
 function App() {
@@ -23,13 +27,15 @@ function App() {
 
   return (
     <AuthProvider>
-      <div className="App">
-        <Header userScroll={userScrollY} />
-        <Featured />
-        <Info />
-        <Routes />
-        <Footer />
-      </div>
+      <CommandsProvider>
+        <div className="App">
+          <Header userScroll={userScrollY} />
+          <Featured />
+          <Info />
+          <Routes />
+          <Footer />
+        </div>
+      </CommandsProvider>
     </AuthProvider>
   );
 }
