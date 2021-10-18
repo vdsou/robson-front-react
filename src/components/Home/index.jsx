@@ -1,13 +1,8 @@
 // Home
-import React, { useContext } from 'react';
-
-import { Context } from '../../context/CommandsContext';
-
+import React from 'react';
 import './Home.css';
 
 export default function Home() {
-  const { commandsList } = useContext(Context);
-  console.log('commandsList', commandsList);
   return (
     <section className="home">
       <h1>Welcome, User 🗣️</h1>

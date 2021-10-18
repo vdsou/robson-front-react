@@ -1,0 +1,24 @@
+.list-commands {
+  background: var(--blue);
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  margin-bottom: 5rem;
+}
+.list-commands ul {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.list-commands ul li {
+    gap: 1fr;
+  list-style: none;
+  margin: 1.2rem auto;
+}
+.list-commands ul li a {
+  color: #d1d8e0;
+}
+.list-commands ul li a:hover {
+  border-bottom: .2rem solid #A4C2F7;
+}
