@@ -1,5 +1,5 @@
 // Login Form
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/AuthContext';
 import Error from '../Error';
 import WelcomeSignup from '../WelcomeSignup';
@@ -26,6 +26,12 @@ export default function LoginForm() {
       password,
     });
   };
+  useEffect(() => {
+    if (!loginSuccess) {
+      setUsername('');
+      setPassword('');
+    }
+  }, [loginSuccess]);
   return (
     <section className="loginForm">
       {showWelcome ? (

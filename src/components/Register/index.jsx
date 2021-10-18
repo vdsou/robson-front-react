@@ -10,10 +10,9 @@ export default function Register() {
     password: '',
   });
   const { name, username, password } = userData;
-  const {
-    handleSignup,
-    signupData: { signupSuccess, err },
-  } = useContext(Context);
+  const { handleSignup, signupData: { signupSuccess, err } } = useContext(Context);
+  // console.log('signupSuccess', signupData);
+
   const handleInputs = (event) => {
     const { value, name: inputName } = event.target;
     setUserData({
@@ -21,10 +20,12 @@ export default function Register() {
       [inputName]: value,
     });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSignup(userData);
   };
+
   return (
     <section className="signupForm">
       <h1 className="heading">Register to manage commands</h1>
