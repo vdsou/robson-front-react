@@ -1,0 +1,20 @@
+.listing-menu {
+  border-top: var(--border);
+  min-height: 73px;
+  background: #e3e7f2;
+}
+.listing-menu .content {
+  display: flex;
+  flex-direction: column;
+  width: max-content
+}
+.listing-menu a {
+  display: inline-flex;
+  margin: 0.7rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4b7bec;
+}
+.listing-menu a:hover {
+  text-decoration: underline;
+}

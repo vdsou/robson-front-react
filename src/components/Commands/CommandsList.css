@@ -12,7 +12,7 @@
   grid-template-columns: 1fr 1fr;
 }
 .list-commands ul li {
-    gap: 1fr;
+  gap: 1fr;
   list-style: none;
   margin: 1.2rem auto;
 }
@@ -20,5 +20,5 @@
   color: #d1d8e0;
 }
 .list-commands ul li a:hover {
-  border-bottom: .2rem solid #A4C2F7;
+  border-bottom: 0.2rem solid #a4c2f7;
 }
