@@ -25,7 +25,7 @@ export default function CommandsList() {
           && commands.map((item) => (
             // eslint-disable-next-line no-param-reassign, no-underscore-dangle
             <li key={item._id}>
-              <a href="#">{item.command}</a>
+              <a href="/command">{item.command}</a>
             </li>
           ))}
         </ul>

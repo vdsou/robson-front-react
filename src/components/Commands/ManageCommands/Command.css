@@ -1,0 +1,68 @@
+.command-list {
+  padding-top: 3.4rem;
+  padding-bottom: 3.4rem;
+  margin-bottom: 10rem;
+  background: var(--blue);
+}
+.command-list .command-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.command-list h1 {
+  font-size: 1.7rem;
+  color: #e5e9ed;
+  margin-bottom: 4rem;
+}
+.command-list label {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e5e9ed;
+}
+.command-list input {
+  margin-top: 1rem;
+  width: 80%;
+  padding: 0.5rem;
+  background: #c4c4c4;
+  color: var(--black);
+  font-size: 1.3rem;
+  display: block;
+}
+.command-list button {
+  background: #c4c4c4;
+  padding: 0.8rem 0;
+  width: 10rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  font-weight: bold;
+  color: var(--blue);
+  cursor: pointer;
+  border: .1rem solid #c4c4c4;
+}
+.command-list button:hover {
+  color: #fff;
+  background: var(--blue);
+  border: .1rem solid #fff;
+}
+
+@media (min-width: 768px) {
+  .command-list h1 {
+    font-size: 2rem;
+  }
+  .command-list label {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  .command-list input {
+    margin-top: 1rem;
+    width: 30%;
+    padding: 0.5rem;
+    background: #c4c4c4;
+    color: var(--black);
+    font-size: 1.3rem;
+    display: block;
+  }
+}
