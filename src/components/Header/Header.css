@@ -75,6 +75,9 @@
 .nav .logout {
   color: tomato;
 }
+.nav .logout:hover {
+  border-bottom: 0.1rem solid tomato !important;
+}
 
 @media (min-width: 768px) {
   .header {
@@ -103,7 +106,7 @@
     line-height: 2;
     padding: 0;
     margin-left: 2rem;
-  }
+  }  
   .header .nav .logout {
     color: #e74c3c;
   }

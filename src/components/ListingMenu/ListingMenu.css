@@ -1,20 +1,45 @@
 .listing-menu {
   border-top: var(--border);
-  min-height: 73px;
+  height: 7.3rem;
   background: #e3e7f2;
+  display: flex;
 }
 .listing-menu .content {
   display: flex;
   flex-direction: column;
-  width: max-content
+  justify-content: center;
+  height: 100%;
 }
 .listing-menu a {
-  display: inline-flex;
-  margin: 0.7rem 0;
+  width: max-content;
+  height: max-content;
   font-size: 1.5rem;
   font-weight: bold;
   color: #4b7bec;
 }
 .listing-menu a:hover {
   text-decoration: underline;
+  text-underline-offset: .3rem;
+}
+
+@media (min-width: 768px) {
+  .listing-menu {
+    border-top: var(--border);
+    height: 11.3rem;
+    background: #e3e7f2;
+    display: flex;
+  }
+  .listing-menu .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .listing-menu a {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0.5rem 0;
+  }
 }
