@@ -30,10 +30,10 @@ export default function Header(props) {
         robson.bot
         <span className="blink">_</span>
       </a>
-      <img src="images/rob.svg" alt="Robot" />
+      <img src="/images/rob.svg" alt="Robot" />
       <div className="menu-button">
         <button type="button" onClick={handleShowMenu}>
-          <img src="images/menu.svg" alt="" />
+          <img src="/images/menu.svg" alt="" />
         </button>
       </div>
       <div className={`nav ${showMenu ? 'active' : ''}`}>

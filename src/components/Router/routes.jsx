@@ -42,7 +42,7 @@ export default function Routes() {
         <CustomRoute component={Register} exact path="/register" />
         <CustomRoute isPrivate component={Home} exact path="/" />
         <CustomRoute isPrivate component={CommandsList} exact path="/commands" />
-        <CustomRoute isPrivate component={Command} exact path="/command" />
+        <CustomRoute isPrivate component={Command} exact path="/command/:id" />
         <CustomRoute component={NotFound} />
       </Switch>
     </Router>

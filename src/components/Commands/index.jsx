@@ -1,5 +1,6 @@
 // Commands List
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint no-underscore-dangle: 0 */
 
 import React, { useContext, useEffect } from 'react';
 import { Context } from '../../context/CommandsContext';
@@ -11,7 +12,6 @@ export default function CommandsList() {
   const {
     commandsList: { commands },
   } = useContext(Context);
-  // console.log('commandsList', commandsList);
   const { setShowRobsonStats } = useContext(LayoutContext);
   useEffect(() => {
     setShowRobsonStats(false);
@@ -23,9 +23,8 @@ export default function CommandsList() {
         <ul>
           {commands
           && commands.map((item) => (
-            // eslint-disable-next-line no-param-reassign, no-underscore-dangle
             <li key={item._id}>
-              <a href="/command">{item.command}</a>
+              <a href={`/command/${item._id}`}>{item.command}</a>
             </li>
           ))}
         </ul>
