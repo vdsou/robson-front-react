@@ -1,4 +1,4 @@
-// Menage Commands
+// Manage Commands
 /* eslint no-underscore-dangle: 0 */
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../../context/CommandsContext';
