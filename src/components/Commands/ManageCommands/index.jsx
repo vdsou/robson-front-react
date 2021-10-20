@@ -25,7 +25,6 @@ export default function ManageCommands() {
       }
     }
   };
-  console.log('result:', result);
   return (
     <>
       <ListingMenu />
@@ -44,16 +43,17 @@ export default function ManageCommands() {
               {Object.entries(...result).map((item) => (
                 <p key={Math.random() * 99999}>{`${item[0]}: ${item[1]}`}</p>
               ))}
-
-              <a href="/">Insert</a>
-              <a href={`/command/${result[0]._id}`}>Edit</a>
-              <a href="/">Delete</a>
+              <div className="manage-commands-buttons">
+                <a href={`/command/${result[0]._id}`}>Edit</a>
+                <a href="/">Delete</a>
+              </div>
             </div>
           ) : (
             <div className="manage-commands-result not-found">
               Nothing found! :(
             </div>
           )}
+          <a href="/commands/insert-command">Insert</a>
         </div>
       </section>
     </>

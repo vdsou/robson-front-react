@@ -1,0 +1,65 @@
+.insert-command {
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  min-height: 50rem;
+  margin-bottom: 1rem;
+}
+.insert-command h1 {
+  color: #d1d8e0;
+}
+.insert-command .insert-command-form label {
+  display: block;
+  margin: 1rem 0;
+  color: #d1d8e0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.insert-command .insert-command-form input {
+  display: block;
+  background: #c4c4c4;
+  color: var(--black);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 80%;
+}
+.insert-command .insert-command-form button {
+  display: inline-block;
+  background: #c4c4c4;
+  padding: 0.5rem 0;
+  width: 10rem;
+  margin-top: 1rem;
+  text-align: center;
+  margin-right: 2rem;
+  font-weight: bold;
+  color: var(--blue);
+  cursor: pointer;
+  border: 0.1rem solid #c4c4c4;
+}
+.insert-command .insert-command-form button:hover {
+  color: #fff;
+  background: var(--blue);
+  border: 0.1rem solid #fff;
+}
+
+@media (min-width: 768px) {
+.insert-command  h1{
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
+}
+.insert-command .insert-command-form {
+    margin-bottom: 2rem;
+}
+.insert-command .insert-command-form label {
+  font-size: 1.5rem;
+}
+.insert-command .insert-command-form input {
+  width: 60%;
+  padding: .8rem
+}
+
+}

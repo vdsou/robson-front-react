@@ -38,13 +38,16 @@
 .manage-commands .manage-commands-result p {
   margin: 1rem;
 }
+.manage-commands .manage-commands-result .manage-commands-buttons {
+  margin-top: 5rem;
+}
 .manage-commands .manage-commands-result a {
   display: inline-block;
   background: #c4c4c4;
   padding: 0.5rem 0;
   width: 10rem;
+  margin-top: 1rem;
   text-align: center;
-  margin-top: 10rem;
   margin-right: 2rem;
   font-weight: bold;
   color: var(--blue);
@@ -64,7 +67,8 @@
   .manage-commands .manage-commands-result {
     margin-top: 8rem;
   }
-  .manage-commands .manage-commands-result p, .manage-commands .not-found {
+  .manage-commands .manage-commands-result p,
+  .manage-commands .not-found {
     font-size: 1.8rem;
   }
 }
