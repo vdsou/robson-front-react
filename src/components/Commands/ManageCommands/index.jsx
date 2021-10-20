@@ -1,8 +1,11 @@
 // Manage Commands
 /* eslint no-underscore-dangle: 0 */
 import React, { useContext, useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import { Context } from '../../../context/CommandsContext';
 import { LayoutContext } from '../../../context/LayoutContext';
+
 import ListingMenu from '../../ListingMenu';
 import './ManageCommands.css';
 
@@ -53,7 +56,10 @@ export default function ManageCommands() {
               Nothing found! :(
             </div>
           )}
-          <a href="/commands/insert-command">Insert</a>
+          <a href="/commands/insert-command" className="insert-button">
+            <span>insert a new command</span>
+            <FontAwesomeIcon icon={faPlusSquare} />
+          </a>
         </div>
       </section>
     </>
