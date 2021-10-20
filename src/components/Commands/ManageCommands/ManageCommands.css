@@ -1,0 +1,70 @@
+.manage-commands {
+  background: var(--blue);
+  display: flex;
+  justify-content: center;
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  min-height: 50rem;
+  margin-bottom: 1rem;
+}
+.manage-commands .manage-commands-search {
+  width: 100%;
+}
+.manage-commands .manage-commands-search-box {
+  display: block;
+  padding: 1rem;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  color: var(--blue);
+  background: #c4c4c4;
+  border: 0.1rem solid #d1d8e0;
+  width: 80%;
+}
+
+.manage-commands
+  .manage-commands-search
+  .manage-commands-search-box::placeholder,
+.manage-commands .manage-commands-result {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--blue);
+}
+.manage-commands .manage-commands-result {
+  width: fit-content;
+  color: #d1d8e0;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+.manage-commands .manage-commands-result p {
+  margin: 1rem;
+}
+.manage-commands .manage-commands-result a {
+  display: inline-block;
+  background: #c4c4c4;
+  padding: 0.5rem 0;
+  width: 10rem;
+  text-align: center;
+  margin-top: 10rem;
+  margin-right: 2rem;
+  font-weight: bold;
+  color: var(--blue);
+  cursor: pointer;
+  border: 0.1rem solid #c4c4c4;
+}
+.manage-commands .manage-commands-result a:hover {
+  color: #fff;
+  background: var(--blue);
+  border: 0.1rem solid #fff;
+}
+@media (min-width: 768px) {
+  .manage-commands .manage-commands-search-box {
+    margin-top: 3rem;
+    width: 40%;
+  }
+  .manage-commands .manage-commands-result {
+    margin-top: 8rem;
+  }
+  .manage-commands .manage-commands-result p, .manage-commands .not-found {
+    font-size: 1.8rem;
+  }
+}

@@ -7,7 +7,7 @@ export default function ListingMenu() {
   return (
     <section className="listing-menu">
       <div className="content">
-        <a href="#">Manage commands</a>
+        <a href="/commands/menage-commands">Manage commands</a>
         <a href="#">Manage users</a>
       </div>
     </section>

@@ -2,14 +2,14 @@
 /* eslint no-underscore-dangle: 0 */
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Error from '../../Error';
-import { LayoutContext } from '../../../context/LayoutContext';
-import ListingMenu from '../../ListingMenu';
+import Error from '../../../Error';
+import { LayoutContext } from '../../../../context/LayoutContext';
+import ListingMenu from '../../../ListingMenu';
 
-import api from '../../../services/api';
+import api from '../../../../services/api';
 
 import './Command.css';
-import Success from '../../Success';
+import Success from '../../../Success';
 
 export default function Command(props) {
   const { match } = props;
@@ -78,7 +78,7 @@ export default function Command(props) {
     <>
       <ListingMenu />
       <section className="command-list">
-        {commandResult.command ? <h1>{`!${commandResult.command}`}</h1> : <h1>{`Loadig...${loadCommand.err}`}</h1>}
+        {commandResult.command !== undefined ? <h1>{`!${commandResult.command}`}</h1> : <h1>{`Loadig...${loadCommand.err}`}</h1>}
         <form
           className="command-form"
           id="command-form"
