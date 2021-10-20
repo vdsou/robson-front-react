@@ -1,5 +1,6 @@
 .header {
   position: fixed;
+  z-index: 9998;
   left: 0;
   top: 0;
   right: 0;
@@ -21,9 +22,6 @@
   color: #000;
   margin-left: 0.5rem;
   transform: translateY(-10%);
-}
-.app {
-  position: relative;
 }
 .header .nav {
   position: absolute;
