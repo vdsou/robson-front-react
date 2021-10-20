@@ -10,9 +10,10 @@ import api from '../../../services/api';
 export default function Command(props) {
   const { match } = props;
   const [idCommand, setIdCommand] = useState('');
-  // const [updatedCommand, setUpdatedCommand] = useState('');
+  const [enableInputs, setEnableInputs] = useState(false);
   const [commandResult, setCommandResult] = useState({});
   const { setShowRobsonStats } = useContext(LayoutContext);
+
   useEffect(() => {
     setShowRobsonStats(false);
   }, []);
@@ -38,12 +39,30 @@ export default function Command(props) {
       [name]: value,
     });
   };
+  const handleEnable = () => {
+    setEnableInputs(!enableInputs);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    api
+      .patch(`/commands/update/${idCommand}`, commandResult)
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <ListingMenu />
       <section className="command-list">
         <h1>{`!${commandResult && commandResult.command}`}</h1>
-        <form className="command-form">
+        <form
+          className="command-form"
+          id="command-form"
+          onSubmit={handleSubmit}
+        >
           {Object.entries(commandResult).map(
             (item, index) => item[0] !== '__v' && (
               // Using index as key here rather than key={Math.random() * 99999}
@@ -56,14 +75,24 @@ export default function Command(props) {
                   defaultValue={item[1] || ''}
                   name={item[0]}
                   id={item[0]}
-                  disabled={item[0] === '_id'}
+                  disabled={item[0] === '_id' || !enableInputs}
                   onChange={handleInput}
+                  style={{
+                    backgroundColor: `${enableInputs ? '#c4c4c4' : ''}`,
+                  }}
                 />
               </label>
             ),
           )}
         </form>
-        <button type="button">Edit</button>
+        <button type="button" onClick={handleEnable}>
+          Edit
+        </button>
+        {enableInputs && (
+          <button form="command-form" type="submit">
+            Save
+          </button>
+        )}
         <button type="button">Delete</button>
       </section>
     </>

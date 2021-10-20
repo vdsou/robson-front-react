@@ -24,7 +24,8 @@
   margin-top: 1rem;
   width: 80%;
   padding: 0.5rem;
-  background: #c4c4c4;
+  background: var(--blue);
+  /* background: #c4c4c4; */
   color: var(--black);
   font-size: 1.3rem;
   display: block;
