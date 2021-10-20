@@ -1,7 +1,7 @@
 .command-list {
   padding-top: 3.4rem;
   padding-bottom: 3.4rem;
-  margin-bottom: 10rem;
+  margin-bottom: 1rem;
   background: var(--blue);
 }
 .command-list .command-form {
@@ -25,26 +25,25 @@
   width: 80%;
   padding: 0.5rem;
   background: var(--blue);
-  /* background: #c4c4c4; */
-  color: var(--black);
+  color: #e5e9ed;
   font-size: 1.3rem;
   display: block;
 }
 .command-list button {
   background: #c4c4c4;
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
   width: 10rem;
   margin-top: 1rem;
   margin-right: 2rem;
   font-weight: bold;
   color: var(--blue);
   cursor: pointer;
-  border: .1rem solid #c4c4c4;
+  border: 0.1rem solid #c4c4c4;
 }
 .command-list button:hover {
   color: #fff;
   background: var(--blue);
-  border: .1rem solid #fff;
+  border: 0.1rem solid #fff;
 }
 
 @media (min-width: 768px) {
@@ -61,9 +60,10 @@
     margin-top: 1rem;
     width: 30%;
     padding: 0.5rem;
-    background: #c4c4c4;
-    color: var(--black);
     font-size: 1.3rem;
     display: block;
+  }
+  .command-list button {
+    padding: 0.8rem 0;
   }
 }

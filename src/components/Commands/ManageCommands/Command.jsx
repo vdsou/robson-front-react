@@ -2,14 +2,27 @@
 /* eslint no-underscore-dangle: 0 */
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Error from '../../Error';
 import { LayoutContext } from '../../../context/LayoutContext';
 import ListingMenu from '../../ListingMenu';
-import './Command.css';
+
 import api from '../../../services/api';
+
+import './Command.css';
+import Success from '../../Success';
 
 export default function Command(props) {
   const { match } = props;
   const [idCommand, setIdCommand] = useState('');
+  const [updateData, setUpdateData] = useState({
+    updateSuccess: undefined,
+    message: '',
+    err: '',
+  });
+  const [loadCommand, setLoadCommand] = useState({
+    err: '',
+  });
+
   const [enableInputs, setEnableInputs] = useState(false);
   const [commandResult, setCommandResult] = useState({});
   const { setShowRobsonStats } = useContext(LayoutContext);
@@ -28,7 +41,7 @@ export default function Command(props) {
           }
         })
         .catch((err) => {
-          console.log(err);
+          setLoadCommand({ err });
         });
     }
   }, [idCommand]);
@@ -47,17 +60,25 @@ export default function Command(props) {
     api
       .patch(`/commands/update/${idCommand}`, commandResult)
       .then(({ data }) => {
-        console.log(data);
+        setUpdateData({
+          message: 'Command updated successfully!',
+          updateSuccess: data.success,
+        });
+        setEnableInputs(!enableInputs);
       })
       .catch((err) => {
-        console.log(err);
+        setUpdateData({
+          updateSuccess: false,
+          err,
+        });
       });
   };
+  const { updateSuccess, err, message } = updateData;
   return (
     <>
       <ListingMenu />
       <section className="command-list">
-        <h1>{`!${commandResult && commandResult.command}`}</h1>
+        {commandResult.command ? <h1>{`!${commandResult.command}`}</h1> : <h1>{`Loadig...${loadCommand.err}`}</h1>}
         <form
           className="command-form"
           id="command-form"
@@ -79,6 +100,7 @@ export default function Command(props) {
                   onChange={handleInput}
                   style={{
                     backgroundColor: `${enableInputs ? '#c4c4c4' : ''}`,
+                    color: `${enableInputs ? 'var(--black)' : ''}`,
                   }}
                 />
               </label>
@@ -95,6 +117,8 @@ export default function Command(props) {
         )}
         <button type="button">Delete</button>
       </section>
+      {updateSuccess !== undefined
+      && (!updateSuccess ? <Error err={err} /> : <Success msg={message} />)}
     </>
   );
 }
