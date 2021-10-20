@@ -15,6 +15,7 @@ import ManageCommands from '../Commands/ManageCommands';
 import history from '../../history';
 
 import { Context } from '../../context/AuthContext';
+import InsertCommad from '../Commands/ManageCommands/InsertCommand';
 
 const CustomRoute = ({ isPrivate, ...rest }) => {
   const { loading, authenticated } = useContext(Context);
@@ -42,9 +43,10 @@ export default function Routes() {
         <CustomRoute component={LoginForm} exact path="/login" />
         <CustomRoute component={Register} exact path="/register" />
         <CustomRoute isPrivate component={Home} exact path="/" />
-        <CustomRoute isPrivate component={CommandsList} exact path="/commands" />
         <CustomRoute isPrivate component={Command} exact path="/command/:id" />
-        <CustomRoute isPrivate component={ManageCommands} exact path="/commands/Manage-commands" />
+        <CustomRoute isPrivate component={CommandsList} exact path="/commands" />
+        <CustomRoute isPrivate component={ManageCommands} exact path="/commands/manage-commands" />
+        <CustomRoute isPrivate component={InsertCommad} exact path="/commands/insert-command" />
         <CustomRoute component={NotFound} />
       </Switch>
     </Router>
