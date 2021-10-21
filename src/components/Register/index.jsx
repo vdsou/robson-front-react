@@ -10,7 +10,10 @@ export default function Register() {
     password: '',
   });
   const { name, username, password } = userData;
-  const { handleSignup, signupData: { signupSuccess, err } } = useContext(Context);
+  const {
+    handleSignup,
+    signupData: { signupSuccess, err },
+  } = useContext(Context);
   // console.log('signupSuccess', signupData);
 
   const handleInputs = (event) => {
@@ -27,33 +30,35 @@ export default function Register() {
   };
 
   return (
-    <section className="signupForm">
-      <h1 className="heading">Register to manage commands</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="NAME"
-          name="name"
-          value={name}
-          onChange={handleInputs}
-        />
-        <input
-          type="text"
-          placeholder="USERNAME"
-          name="username"
-          value={username}
-          onChange={handleInputs}
-        />
-        <input
-          type="password"
-          placeholder="PASSWORD"
-          name="password"
-          value={password}
-          onChange={handleInputs}
-        />
-        <button type="submit">Submit</button>
-      </form>
+    <>
+      <section className="signupForm">
+        <h1 className="heading">Register to manage commands</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="NAME"
+            name="name"
+            value={name}
+            onChange={handleInputs}
+          />
+          <input
+            type="text"
+            placeholder="USERNAME"
+            name="username"
+            value={username}
+            onChange={handleInputs}
+          />
+          <input
+            type="password"
+            placeholder="PASSWORD"
+            name="password"
+            value={password}
+            onChange={handleInputs}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
       {!signupSuccess && <Error err={err} />}
-    </section>
+    </>
   );
 }
