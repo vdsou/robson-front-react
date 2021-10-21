@@ -20,7 +20,10 @@
 .footer a:hover {
   border-bottom: 0.1rem solid #fff;
 }
-
+.footer i{
+  display: inline-block;
+  transform: translateY(2%);
+}
 @media (min-width: 768px) {
   .footer {
     margin-top: .1rem;

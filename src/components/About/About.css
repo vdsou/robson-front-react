@@ -1,0 +1,53 @@
+.about {
+  background: var(--blue);
+  min-height: 50vh;
+  margin-top: 0.2rem;
+}
+.about h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #d1d8e0;
+  text-decoration: underline;
+}
+.about p {
+  font-size: 1.7.rem;
+  color: #fff;
+}
+.about .social {
+  margin: 1rem 0;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.about .social a {
+  color: #c4c4c4;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+.about .social a:hover {
+  opacity: 1;
+}
+.about .credits a {
+  color: #fff;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+.about .credits a:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .about h1 {
+    font-size: 1.9rem;
+  }
+  .about p {
+    font-size: 1.5rem;
+  }
+  .about .social a {
+    font-size: 3rem;
+  }
+  .about .social {
+    width: 20%;
+  }
+}
