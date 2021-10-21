@@ -15,6 +15,7 @@ export default function Command(props) {
   const { match } = props;
   const [commandId, setCommandId] = useState('');
   const [showButtons, setShowButtons] = useState(true);
+  const [showConfirm, setShowConfirm] = useState(false);
   const [updateData, setUpdateData] = useState({
     updateSuccess: undefined,
     message: '',
@@ -57,6 +58,7 @@ export default function Command(props) {
   };
   const handleEnable = () => {
     setEnableInputs(!enableInputs);
+    setShowConfirm(false);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -95,6 +97,9 @@ export default function Command(props) {
         });
       });
   };
+  const handleConfirm = () => {
+    setShowConfirm(!showConfirm);
+  };
   const { updateSuccess, err, message } = updateData;
   return (
     <>
@@ -132,15 +137,25 @@ export default function Command(props) {
           </form>
           {showButtons && (
             <div className="controll-buttons">
-              <button type="button" onClick={handleEnable}>
-                {`${enableInputs ? 'Cancel' : 'Edit'}`}
-              </button>
-              {enableInputs && (
-                <button form="command-form" type="submit">
-                  Save
+              <div className="primary-buttons">
+                <button type="button" onClick={handleEnable}>
+                  {`${enableInputs ? 'Cancel' : 'Edit'}`}
                 </button>
+                {enableInputs && (
+                  <button form="command-form" type="submit">
+                    Save
+                  </button>
+                )}
+                <button type="button" onClick={handleConfirm}>Delete</button>
+              </div>
+              {showConfirm
+              && (
+              <div className="confirm-delete">
+                <span>Are you?</span>
+                <button type="button" className="confirm-yes" onClick={handleDelete}>Yes</button>
+                <button type="button" className="confirm-cancel" onClick={handleConfirm}>Cancel</button>
+              </div>
               )}
-              <button type="button" onClick={handleDelete}>Delete</button>
             </div>
 
           )}
