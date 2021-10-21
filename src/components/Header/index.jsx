@@ -51,7 +51,7 @@ export default function Header(props) {
           <a href="/commands">Commands</a>
           <a href="#Users">Users</a>
           <a href="#Setting">Setting</a>
-          <a href="#About">About</a>
+          <a href="/about">About</a>
           {authenticated && (
             <a className="logout" href="#" onClick={handleLogout}>
               Logout
