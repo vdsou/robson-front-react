@@ -2,13 +2,14 @@
   padding-top: 3.4rem;
   padding-bottom: 3.4rem;
   background: var(--blue);
+  min-height: 50vh;
 }
 .command-list .command-form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.command-list h1 {
+.command-list h1, .command-list h2 {
   font-size: 1.7rem;
   color: #e5e9ed;
   margin-bottom: 2rem;

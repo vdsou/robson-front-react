@@ -11,7 +11,22 @@
   font-size: 1.5rem;
   color: var(--black);
 }
-
+.success-container .link {
+  margin: 1rem;
+}
+.success-container .link a{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.success-container .link a{
+  border-bottom: 0.1rem solid #fff;
+  padding-bottom: .2rem;
+  opacity: 1;
+}
+.success-container .link a:hover{
+  opacity: .8;
+}
 @media (min-width: 768px) {
   .success-container {
     font-size: 1.5rem;
