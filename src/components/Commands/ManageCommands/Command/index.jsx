@@ -13,16 +13,19 @@ import Success from '../../../Success';
 
 export default function Command(props) {
   const { match } = props;
-  const [idCommand, setIdCommand] = useState('');
+  const [commandId, setCommandId] = useState('');
+  const [showButtons, setShowButtons] = useState(true);
   const [updateData, setUpdateData] = useState({
     updateSuccess: undefined,
     message: '',
     err: '',
   });
-  const [loadCommand, setLoadCommand] = useState({
+  const [deleteData, setDeleteData] = useState({
+    deleteSuccess: undefined,
+    message: '',
+    link: '',
     err: '',
   });
-
   const [enableInputs, setEnableInputs] = useState(false);
   const [commandResult, setCommandResult] = useState({});
   const { setShowRobsonStats } = useContext(LayoutContext);
@@ -31,20 +34,20 @@ export default function Command(props) {
     setShowRobsonStats(false);
   }, []);
   useEffect(() => {
-    setIdCommand(match.params.id);
-    if (idCommand) {
+    setCommandId(match.params.id);
+    if (commandId) {
       api
-        .get(`/commands/getcommand/${idCommand}`)
+        .get(`/commands/getcommand/${commandId}`)
         .then(({ data }) => {
           if (data) {
             setCommandResult(data);
           }
         })
         .catch((err) => {
-          setLoadCommand({ err });
+          setCommandResult({ err });
         });
     }
-  }, [idCommand]);
+  }, [commandId]);
   const handleInput = (event) => {
     const { value, name } = event.target;
     setCommandResult({
@@ -58,7 +61,7 @@ export default function Command(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     api
-      .patch(`/commands/update/${idCommand}`, commandResult)
+      .patch(`/commands/update/${commandId}`, commandResult)
       .then(({ data }) => {
         setUpdateData({
           message: 'Command updated successfully!',
@@ -73,52 +76,89 @@ export default function Command(props) {
         });
       });
   };
+  const handleDelete = () => {
+    api
+      .delete(`/commands/delete/${commandId}`)
+      .then(({ data }) => {
+        if (data) {
+          setDeleteData({
+            message: 'Command deleted successfully!',
+            deleteSuccess: true,
+            link: '/commands',
+          });
+          setShowButtons(false);
+        }
+      }).catch((err) => {
+        setDeleteData({
+          err,
+          deleteSuccess: false,
+        });
+      });
+  };
   const { updateSuccess, err, message } = updateData;
   return (
     <>
       <ListingMenu />
-      <section className="command-list">
-        {commandResult.command !== undefined ? <h1>{`!${commandResult.command}`}</h1> : <h1>{`Loadig...${loadCommand.err}`}</h1>}
-        <form
-          className="command-form"
-          id="command-form"
-          onSubmit={handleSubmit}
-        >
-          {Object.entries(commandResult).map(
-            (item, index) => item[0] !== '__v' && (
-              // Using index as key here rather than key={Math.random() * 99999}
-              // eslint-disable-next-line react/no-array-index-key
-              <label htmlFor={item[0]} key={index}>
-                {`${item[0]}:`}
-                <input
-                  key={item[0]}
-                  type="text"
-                  defaultValue={item[1] || ''}
-                  name={item[0]}
-                  id={item[0]}
-                  disabled={item[0] === '_id' || !enableInputs}
-                  onChange={handleInput}
-                  style={{
-                    backgroundColor: `${enableInputs ? '#c4c4c4' : ''}`,
-                    color: `${enableInputs ? 'var(--black)' : ''}`,
-                  }}
-                />
-              </label>
-            ),
+      {commandResult.command !== undefined ? (
+        <section className="command-list">
+          {commandResult.command && <h2>{`!${commandResult.command}`}</h2>}
+          <form
+            className="command-form"
+            id="command-form"
+            onSubmit={handleSubmit}
+          >
+            {Object.entries(commandResult).map(
+              (item, index) => item[0] !== '__v' && (
+                // Using index as key here rather than key={Math.random() * 99999}
+                // eslint-disable-next-line react/no-array-index-key
+                <label htmlFor={item[0]} key={index}>
+                  {`${item[0]}:`}
+                  <input
+                    key={item[0]}
+                    type="text"
+                    defaultValue={item[1] || ''}
+                    name={item[0]}
+                    id={item[0]}
+                    disabled={item[0] === '_id' || !enableInputs}
+                    onChange={handleInput}
+                    style={{
+                      backgroundColor: `${enableInputs ? '#c4c4c4' : ''}`,
+                      color: `${enableInputs ? 'var(--black)' : ''}`,
+                    }}
+                  />
+                </label>
+              ),
+            )}
+          </form>
+          {showButtons && (
+            <div className="controll-buttons">
+              <button type="button" onClick={handleEnable}>
+                {`${enableInputs ? 'Cancel' : 'Edit'}`}
+              </button>
+              {enableInputs && (
+                <button form="command-form" type="submit">
+                  Save
+                </button>
+              )}
+              <button type="button" onClick={handleDelete}>Delete</button>
+            </div>
+
           )}
-        </form>
-        <button type="button" onClick={handleEnable}>
-          {`${enableInputs ? 'Cancel' : 'Edit'}`}
-        </button>
-        {enableInputs && (
-          <button form="command-form" type="submit">
-            Save
-          </button>
-        )}
-        <button type="button">Delete</button>
-      </section>
+        </section>
+      )
+        : (<section className="command-list"><h1>No command found...</h1></section>)}
       {updateSuccess !== undefined
       && (!updateSuccess ? <Error err={err} /> : <Success msg={message} />)}
+      {deleteData.deleteSuccess !== undefined
+      && (!deleteData.deleteSuccess
+        ? <Error err={deleteData.err} />
+        : (
+          <Success
+            msg={deleteData.message}
+            link={deleteData.link}
+          />
+        )
+      )}
     </>
   );
 }

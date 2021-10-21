@@ -47,7 +47,6 @@ export default function ManageCommands() {
               ))}
               <div className="manage-commands-buttons">
                 <a href={`/command/${result[0]._id}`}>Edit</a>
-                <a href="/">Delete</a>
               </div>
             </div>
           ) : (
