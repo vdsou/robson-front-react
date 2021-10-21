@@ -7,28 +7,28 @@
   align-items: center;
 }
 .footer .content {
-  font-size: 1rem;
+  font-size: 1.1rem;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.footer .content .credits a,
-.footer .content p {
+.footer a,
+.footer p {
   color: #fff;
 }
-.footer .content .credits a:hover {
+.footer a:hover {
   border-bottom: 0.1rem solid #fff;
 }
 
 @media (min-width: 768px) {
   .footer {
-    margin-top: 6.5rem;
+    margin-top: .1rem;
     height: 4.5rem;
     width: 100%;
   }
   .footer .content {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
