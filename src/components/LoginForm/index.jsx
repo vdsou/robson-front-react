@@ -33,31 +33,33 @@ export default function LoginForm() {
     }
   }, [loginSuccess]);
   return (
-    <section className="loginForm">
-      {showWelcome ? (
-        <WelcomeSignup />
-      ) : (
-        <h1 className="heading">If you are an admin please log in</h1>
-      )}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="USERNAME"
-          value={username}
-          onChange={handleUsername}
-          required
-        />
-        <input
-          type="password"
-          placeholder="PASSWORD"
-          value={password}
-          onChange={handlePassword}
-          required
-        />
-        <button type="submit">ENTER</button>
-        <a href="/register">sign up</a>
-      </form>
+    <>
+      <section className="loginForm">
+        {showWelcome ? (
+          <WelcomeSignup />
+        ) : (
+          <h1 className="heading">If you are an admin please log in</h1>
+        )}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="USERNAME"
+            value={username}
+            onChange={handleUsername}
+            required
+          />
+          <input
+            type="password"
+            placeholder="PASSWORD"
+            value={password}
+            onChange={handlePassword}
+            required
+          />
+          <button type="submit">ENTER</button>
+          <a href="/register">sign up</a>
+        </form>
+      </section>
       {!loginSuccess && <Error err={err} />}
-    </section>
+    </>
   );
 }
