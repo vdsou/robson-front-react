@@ -100,6 +100,7 @@ export default function Command(props) {
   const handleConfirm = () => {
     setShowConfirm(!showConfirm);
   };
+  console.log(showConfirm);
   const { updateSuccess, err, message } = updateData;
   return (
     <>
@@ -146,14 +147,19 @@ export default function Command(props) {
                     Save
                   </button>
                 )}
-                <button type="button" onClick={handleConfirm}>Delete</button>
+                <button
+                  type="button"
+                  onClick={handleConfirm}
+                  className={showConfirm ? 'confirm-cancel' : ''}
+                >
+                  {`${showConfirm ? 'Cancel' : 'Delete'}`}
+                </button>
               </div>
               {showConfirm
               && (
               <div className="confirm-delete">
                 <span>Are you?</span>
                 <button type="button" className="confirm-yes" onClick={handleDelete}>Yes</button>
-                <button type="button" className="confirm-cancel" onClick={handleConfirm}>Cancel</button>
               </div>
               )}
             </div>
