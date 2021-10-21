@@ -9,7 +9,8 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-.command-list h1, .command-list h2 {
+.command-list h1,
+.command-list h2 {
   font-size: 1.7rem;
   color: #e5e9ed;
   margin-bottom: 2rem;
@@ -45,6 +46,40 @@
   background: var(--blue);
   border: 0.1rem solid #fff;
 }
+.command-list .controll-buttons {
+  display: flex;
+  flex-direction: column;
+}
+.command-list .controll-buttons .confirm-delete span {
+  display: block;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 30%;
+  margin-top: 1rem;
+}
+.command-list .controll-buttons .confirm-delete .confirm-yes {
+  background: var(--blue);
+}
+.command-list .controll-buttons .confirm-delete .confirm-cancel {
+  background: tomato;
+}
+.command-list .controll-buttons .confirm-delete .confirm-yes,
+.command-list .controll-buttons .confirm-delete .confirm-cancel {
+  color: #fff;
+  opacity: 0.8;
+}
+.command-list .controll-buttons .confirm-delete .confirm-yes:hover,
+.command-list .controll-buttons .confirm-delete .confirm-cancel:hover {
+  color: #fff;
+  opacity: 1;
+}
+/* .command-list .controll-buttons .confirm-delete .confirm-yes:hover {
+  background: var(--blue);
+}
+.command-list .controll-buttons .confirm-delete .confirm-cancel:hover {
+  background: tomato;
+} */
 
 @media (min-width: 768px) {
   .command-list h1 {
@@ -65,5 +100,17 @@
   }
   .command-list button {
     padding: 0.8rem 0;
+  }
+  .command-list .controll-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+  .command-list .controll-buttons .confirm-delete span {
+    display: inline;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 0;
+    margin-right: 1rem;
   }
 }
