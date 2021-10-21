@@ -5,7 +5,6 @@
   padding-top: 1.7rem;
   padding-bottom: 1.7rem;
   min-height: 50rem;
-  margin-bottom: 1rem;
 }
 .manage-commands .manage-commands-search {
   width: 100%;
@@ -20,7 +19,6 @@
   border: 0.1rem solid #d1d8e0;
   width: 80%;
 }
-
 .manage-commands
   .manage-commands-search
   .manage-commands-search-box::placeholder,
@@ -69,12 +67,15 @@
   z-index: 9998;
   text-align: center;
   width: max-content;
-  font-size: 4rem;
+  font-size: 5rem;
   color: #d1d8e0;
   cursor: pointer;
 }
 .manage-commands .insert-button span {
   font-size: 1.5rem;
+  padding: .2rem;
+  background: #d1d8e0;
+  color: var(--blue);
   display: none;
 }
 
@@ -84,6 +85,7 @@
 }
 .manage-commands .insert-button:hover.insert-button span {
   display: initial;
+  background: #fff;
   margin-right: 1rem;
   transition: all ease 0.2s;
 }

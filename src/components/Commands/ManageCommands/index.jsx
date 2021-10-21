@@ -17,7 +17,6 @@ export default function ManageCommands() {
   useEffect(() => {
     setShowRobsonStats(false);
   }, []);
-  // useEffect(() => {});
   const handleSearch = (event) => {
     if (commands) {
       const searchResult = commands.filter(
@@ -57,7 +56,7 @@ export default function ManageCommands() {
             </div>
           )}
           <a href="/commands/insert-command" className="insert-button">
-            <span>insert a new command</span>
+            <span>Insert a new command</span>
             <FontAwesomeIcon icon={faPlusSquare} />
           </a>
         </div>
