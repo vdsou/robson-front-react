@@ -108,7 +108,7 @@ export default function Command(props) {
           )}
         </form>
         <button type="button" onClick={handleEnable}>
-          Edit
+          {`${enableInputs ? 'Cancel' : 'Edit'}`}
         </button>
         {enableInputs && (
           <button form="command-form" type="submit">
