@@ -46,6 +46,8 @@ export default function LoginForm() {
             placeholder="USERNAME"
             value={username}
             onChange={handleUsername}
+            autoCorrect="off"
+            autoCapitalize="off"
             required
           />
           <input

@@ -14,7 +14,6 @@ export default function Register() {
     handleSignup,
     signupData: { signupSuccess, err },
   } = useContext(Context);
-  // console.log('signupSuccess', signupData);
 
   const handleInputs = (event) => {
     const { value, name: inputName } = event.target;
@@ -40,6 +39,7 @@ export default function Register() {
             name="name"
             value={name}
             onChange={handleInputs}
+            required
           />
           <input
             type="text"
@@ -47,6 +47,9 @@ export default function Register() {
             name="username"
             value={username}
             onChange={handleInputs}
+            autoCorrect="off"
+            autoCapitalize="off"
+            required
           />
           <input
             type="password"
@@ -54,6 +57,7 @@ export default function Register() {
             name="password"
             value={password}
             onChange={handleInputs}
+            required
           />
           <button type="submit">Submit</button>
         </form>
