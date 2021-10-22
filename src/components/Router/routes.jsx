@@ -44,7 +44,7 @@ export default function Routes() {
         <CustomRoute component={LoginForm} exact path="/login" />
         <CustomRoute component={Register} exact path="/register" />
         <CustomRoute isPrivate component={Home} exact path="/" />
-        <CustomRoute isPrivate component={About} exact path="/about" />
+        <CustomRoute component={About} exact path="/about" />
         <CustomRoute isPrivate component={Command} exact path="/command/:id" />
         <CustomRoute isPrivate component={CommandsList} exact path="/commands" />
         <CustomRoute isPrivate component={ManageCommands} exact path="/commands/manage-commands" />

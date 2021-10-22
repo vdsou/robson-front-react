@@ -1,7 +1,7 @@
 .about {
   background: var(--blue);
   min-height: 50vh;
-  margin-top: 0.2rem;
+  margin: 0.2rem 0;
 }
 .about h1 {
   font-size: 1.5rem;
