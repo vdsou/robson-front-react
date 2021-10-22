@@ -1,7 +1,7 @@
 .loginForm {
   margin-top: 3rem;
   padding: 0;
-  min-height: 30.5rem;
+  min-height: 50vh;
 }
 .loginForm .heading {
   border-top: var(--border);
