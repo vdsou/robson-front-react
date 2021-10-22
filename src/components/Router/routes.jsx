@@ -31,9 +31,13 @@ const CustomRoute = ({ isPrivate, ...rest }) => {
   if (isPrivate && !authenticated) {
     return <Redirect to="/login" />;
   }
+
   if (!isPrivate && authenticated) {
     return <Redirect to="/" />;
   }
+  // if (isPublic) {
+  //   return <Route isPublic />;
+  // }
   /* eslint-disable react/jsx-props-no-spreading */
   return <Route {...rest} />;
 };
@@ -43,13 +47,13 @@ export default function Routes() {
       <Switch>
         <CustomRoute component={LoginForm} exact path="/login" />
         <CustomRoute component={Register} exact path="/register" />
+        <Route component={About} exact path="/about" />
         <CustomRoute isPrivate component={Home} exact path="/" />
-        <CustomRoute component={About} exact path="/about" />
         <CustomRoute isPrivate component={Command} exact path="/command/:id" />
         <CustomRoute isPrivate component={CommandsList} exact path="/commands" />
         <CustomRoute isPrivate component={ManageCommands} exact path="/commands/manage-commands" />
         <CustomRoute isPrivate component={InsertCommad} exact path="/commands/insert-command" />
-        <CustomRoute component={NotFound} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );
