@@ -7,7 +7,6 @@ import './Info.css';
 
 export default function Info() {
   const { showRobsonStats } = useContext(LayoutContext);
-  console.log('info', showRobsonStats);
   if (!showRobsonStats) {
     return null;
   }
