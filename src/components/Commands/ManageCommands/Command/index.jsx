@@ -100,7 +100,6 @@ export default function Command(props) {
   const handleConfirm = () => {
     setShowConfirm(!showConfirm);
   };
-  console.log(showConfirm);
   const { updateSuccess, err, message } = updateData;
   return (
     <>

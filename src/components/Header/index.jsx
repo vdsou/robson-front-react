@@ -9,10 +9,7 @@ export default function Header(props) {
   const {
     handleLogout,
     authenticated,
-    signupData: { signupSuccess },
   } = useContext(Context);
-  console.log('authenticated:', authenticated);
-  console.log('signupSuccess:', signupSuccess);
   const [showMenu, setShowMenu] = useState(false);
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
