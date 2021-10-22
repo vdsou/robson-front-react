@@ -39,6 +39,8 @@ export default function ManageCommands() {
             placeholder="Search here"
             className="manage-commands-search-box"
             onChange={handleSearch}
+            autoCapitalize="off"
+            autoComplete="off"
           />
           {result.length > 0 ? (
             <div className="manage-commands-result">
