@@ -35,9 +35,7 @@ const CustomRoute = ({ isPrivate, ...rest }) => {
   if (!isPrivate && authenticated) {
     return <Redirect to="/" />;
   }
-  // if (isPublic) {
-  //   return <Route isPublic />;
-  // }
+
   /* eslint-disable react/jsx-props-no-spreading */
   return <Route {...rest} />;
 };

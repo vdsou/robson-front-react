@@ -4,14 +4,13 @@
   margin: 0.2rem 0;
 }
 .about h1 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
   margin-top: 2rem;
   color: #d1d8e0;
-  text-decoration: underline;
 }
 .about p {
-  font-size: 1.7.rem;
+  font-size: 1.3rem;
   color: #fff;
 }
 .about .social {
@@ -22,11 +21,16 @@
 }
 .about .social a {
   color: #c4c4c4;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  line-height: 1.7;
   opacity: 0.7;
 }
 .about .social a:hover {
+  color: #fff;
   opacity: 1;
+}
+.about .credits {
+  margin-top: 3rem;
 }
 .about .credits a {
   color: #fff;

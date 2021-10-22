@@ -20,6 +20,7 @@ export default function About() {
             href="https://www.instagram.com/vdsou/"
             target="_blank"
             rel="noreferrer"
+            title="Instagram"
           >
             <FontAwesomeIcon icon={faInstagram} />
           </a>
@@ -27,6 +28,7 @@ export default function About() {
             href="https://www.linkedin.com/in/vdsou/"
             target="_blank"
             rel="noreferrer"
+            title="LinkedIn"
           >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
@@ -34,10 +36,16 @@ export default function About() {
             href="https://twitter.com/vdsou01"
             target="_blank"
             rel="noreferrer"
+            title="Twitter"
           >
             <FontAwesomeIcon icon={faTwitter} />
           </a>
-          <a href="https://github.com/vdsou" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/vdsou"
+            target="_blank"
+            rel="noreferrer"
+            title="Github"
+          >
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </div>
@@ -47,32 +55,59 @@ export default function About() {
             {'Icons made by '}
             <a
               href="https://www.flaticon.com/br/autores/smashicons"
+              rel="noreferrer"
+              target="_blank"
               title="Smashicons"
             >
               Smashicons
             </a>
             {' from '}
-            <a href="https://www.flaticon.com/br/" title="Flaticon">
+            <a
+              href="https://www.flaticon.com/br/"
+              rel="noreferrer"
+              target="_blank"
+              title="Flaticon"
+            >
               www.flaticon.com
             </a>
           </p>
           <p>
             {'Icons made by '}
-            <a href="https://www.freepik.com" title="Freepik">
+            <a
+              href="https://www.freepik.com"
+              rel="noreferrer"
+              target="_blank"
+              title="Freepik"
+            >
               Freepik
             </a>
             {' from '}
-            <a href="https://www.flaticon.com/" title="Flaticon">
+            <a
+              href="https://www.flaticon.com/"
+              rel="noreferrer"
+              target="_blank"
+              title="Flaticon"
+            >
               www.flaticon.com
             </a>
           </p>
           <p>
             {'Icons made by '}
-            <a href="https://fontawesome.com/" title="Font Awesome">
+            <a
+              href="https://fontawesome.com/"
+              rel="noreferrer"
+              target="_blank"
+              title="Font Awesome"
+            >
               Font Awesome
             </a>
             {' from '}
-            <a href="https://fontawesome.com/" title="Font Awesome">
+            <a
+              href="https://fontawesome.com/"
+              rel="noreferrer"
+              target="_blank"
+              title="Font Awesome"
+            >
               www.fontawesome.com
             </a>
           </p>
