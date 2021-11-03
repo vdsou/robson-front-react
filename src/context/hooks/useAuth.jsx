@@ -5,6 +5,7 @@ import history from '../../history';
 export default function useAuth() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [expired, setExperied] = useState(false);
   const [signupData, setSignupData] = useState({
     signupSuccess: true,
     showWelcome: false,
@@ -21,24 +22,31 @@ export default function useAuth() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      api.defaults.headers.authentication = `Bearer ${JSON.parse(token)}`;
+      const parseUserToken = () => {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(
+          Buffer.from(base64, 'base64')
+            .toString('ascii')
+            .split('')
+            .map((c) => `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`)
+            .join(''),
+        );
+        return JSON.parse(jsonPayload);
+      };
       setAuthenticated(true);
+      const jwtPayload = parseUserToken();
+      setExperied(jwtPayload.exp < Date.now() / 1000);
+      if (expired) {
+        // eslint-disable-next-line no-use-before-define
+        handleLogout();
+        history.push('/expired');
+      }
+      console.log(expired);
+      api.defaults.headers.authentication = `Bearer ${JSON.parse(token)}`;
     }
     setLoading(false);
-  }, []);
-
-  // const validity = () => {
-  //   let json = localStorage.getItem('user');
-  //   if (json) {
-  //     const token = JSON.parse(json).token;
-  //     const jwtPayload = authService.verifyToken(token);
-  //     if (jwtPayload.exp < Date.now() / 1000) {
-  //       authService.logout();
-  //       next('/');
-  //     }
-  //     next();
-  //   }
-  // };
+  }, [expired]);
 
   // handle user login and logout
   const handleLogin = ({ username, password }) => {
@@ -90,11 +98,13 @@ export default function useAuth() {
         setSignupData({ showWelcome: false, err });
       });
   };
+
   return {
     loading,
     authenticated,
     signupData,
     loginData,
+    expired,
     handleLogin,
     handleLogout,
     handleSignup,
