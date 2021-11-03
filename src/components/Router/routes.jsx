@@ -11,12 +11,13 @@ import NotFound from '../NotFound';
 import CommandsList from '../Commands';
 import Command from '../Commands/ManageCommands/Command';
 import ManageCommands from '../Commands/ManageCommands';
+import Expired from '../Expired';
+import About from '../About';
 
 import history from '../../history';
 
 import { Context } from '../../context/AuthContext';
 import InsertCommad from '../Commands/ManageCommands/InsertCommand';
-import About from '../About';
 
 const CustomRoute = ({ isPrivate, ...rest }) => {
   const { loading, authenticated } = useContext(Context);
@@ -51,6 +52,7 @@ export default function Routes() {
         <CustomRoute isPrivate component={CommandsList} exact path="/commands" />
         <CustomRoute isPrivate component={ManageCommands} exact path="/commands/manage-commands" />
         <CustomRoute isPrivate component={InsertCommad} exact path="/commands/insert-command" />
+        <Route component={Expired} exact path="/expired" />
         <Route component={NotFound} />
       </Switch>
     </Router>

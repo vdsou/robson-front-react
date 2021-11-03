@@ -8,6 +8,7 @@ function LayoutProvider({ children }) {
   useEffect(() => {
     setShowRobsonStats(true);
   }, []);
+  console.log('robstats', showRobsonStats);
   return (
     <LayoutContext.Provider value={{ showRobsonStats, setShowRobsonStats }}>
       {children}

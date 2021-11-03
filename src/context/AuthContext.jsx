@@ -13,6 +13,7 @@ function AuthProvider({ children }) {
     handleLogin,
     handleLogout,
     handleSignup,
+    handleToken,
   } = useAuth();
   return (
     /** This will send data to the components:
@@ -28,6 +29,7 @@ function AuthProvider({ children }) {
         handleLogin,
         handleLogout,
         handleSignup,
+        handleToken,
       }}
     >
       {children}
