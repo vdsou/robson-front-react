@@ -42,7 +42,6 @@ export default function useAuth() {
         handleLogout();
         history.push('/expired');
       }
-      console.log(expired);
       api.defaults.headers.authentication = `Bearer ${JSON.parse(token)}`;
     }
     setLoading(false);
