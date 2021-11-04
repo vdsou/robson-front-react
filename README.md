@@ -6,7 +6,7 @@ This web application consumes data from the Robson [API](https://github.com/vdso
 
 ## 🤖️
 
-📑️ the purpose here is to put in practice some React concepts I've been learning latey.
+📑️ The idea here is to put in practice some of the React concepts I've been learning lately.
 
 ### Icons by:
 - [Smashicons](https://www.flaticon.com/br/autores/smashicons)
