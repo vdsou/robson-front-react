@@ -36,7 +36,6 @@ export default function InsertCommad() {
     });
   };
   const handleSubmit = (event) => {
-    console.log(newCommand);
     event.preventDefault();
     api
       .post('/commands/insert', newCommand)
