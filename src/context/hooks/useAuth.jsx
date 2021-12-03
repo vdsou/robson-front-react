@@ -16,6 +16,8 @@ export default function useAuth() {
     },
   });
   const [loginData, setLoginData] = useState({
+    username: '',
+    userId: '',
     loginSuccess: true,
     err: '',
   });
@@ -32,10 +34,12 @@ export default function useAuth() {
             .map((c) => `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`)
             .join(''),
         );
+        // eslint-disable-next-line no-console
         return JSON.parse(jsonPayload);
       };
       setAuthenticated(true);
       const jwtPayload = parseUserToken();
+      setLoginData({ userId: jwtPayload.userId });
       setExperied(jwtPayload.exp < Date.now() / 1000);
       if (expired) {
         // eslint-disable-next-line no-use-before-define

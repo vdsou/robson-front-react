@@ -6,8 +6,10 @@ import Error from '../../../Error';
 import Success from '../../../Success';
 import api from '../../../../services/api';
 import './InsertCommand.css';
+import { Context } from '../../../../context/AuthContext';
 
 export default function InsertCommad() {
+  const { loginData } = useContext(Context);
   const { setShowRobsonStats } = useContext(LayoutContext);
   const initialCommandState = {
     command: '',
@@ -15,6 +17,7 @@ export default function InsertCommad() {
     count: '',
     image: '',
     audioYt: '',
+    userId: loginData.userId,
   };
   const [newCommand, setNewCommand] = useState(initialCommandState);
   const [insertData, setInsertData] = useState({
