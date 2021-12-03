@@ -124,7 +124,7 @@ export default function Command(props) {
                     defaultValue={item[1] || ''}
                     name={item[0]}
                     id={item[0]}
-                    disabled={item[0] === '_id' || !enableInputs}
+                    disabled={item[0] === '_id' || item[0] === 'user' || item[0] === 'createdAt' || !enableInputs}
                     onChange={handleInput}
                     style={{
                       backgroundColor: `${enableInputs ? '#c4c4c4' : ''}`,
