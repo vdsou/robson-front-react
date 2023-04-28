@@ -1,5 +1,6 @@
 // Footer
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import './Footer.css';
@@ -19,7 +20,7 @@ export default function Footer() {
           </a>
         </p>
         <div className="credits">
-          <a href="/about">credits</a>
+          <Link to="/about">credits</Link>
         </div>
       </div>
     </footer>

@@ -1,15 +1,13 @@
 // Header
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Proptypes from 'prop-types';
 import './Header.css';
 import { Context } from '../../context/AuthContext';
 
 export default function Header(props) {
-  const {
-    handleLogout,
-    authenticated,
-  } = useContext(Context);
+  const { handleLogout, authenticated } = useContext(Context);
   const [showMenu, setShowMenu] = useState(false);
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
@@ -23,10 +21,10 @@ export default function Header(props) {
         color: '#fff',
       }}
     >
-      <a href="/" className="logo">
+      <Link className="logo" to="/">
         robson.bot
         <span className="blink">_</span>
-      </a>
+      </Link>
       <img src="/images/rob.svg" alt="Robot" />
       <div className="menu-button">
         <button type="button" onClick={handleShowMenu}>
@@ -45,10 +43,10 @@ export default function Header(props) {
             <h1 className="logo-white">robson.bot</h1>
             <img src="images/rob-white.svg" alt="" />
           </div>
-          <a href="/commands">Commands</a>
-          <a href="#Users">Users</a>
-          <a href="#Setting">Setting</a>
-          <a href="/about">About</a>
+          <Link to="/commands">Commands</Link>
+          <Link to="/users">Users</Link>
+          <Link to="/settings">Settings</Link>
+          <Link to="/about">About</Link>
           {authenticated && (
             <a className="logout" href="#" onClick={handleLogout}>
               Logout

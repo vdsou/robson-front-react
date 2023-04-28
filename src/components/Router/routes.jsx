@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   Redirect, Route, Router, Switch,
 } from 'react-router';
@@ -13,6 +13,8 @@ import Command from '../Commands/ManageCommands/Command';
 import ManageCommands from '../Commands/ManageCommands';
 import Expired from '../Expired';
 import About from '../About';
+import Header from '../Header';
+import Footer from '../Footer';
 
 import history from '../../history';
 
@@ -41,8 +43,23 @@ const CustomRoute = ({ isPrivate, ...rest }) => {
   return <Route {...rest} />;
 };
 export default function Routes() {
+  const [userScrollY, setuserScrollY] = useState(false);
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setuserScrollY(true);
+      } else {
+        setuserScrollY(false);
+      }
+    };
+    window.addEventListener('scroll', scrollListener);
+    return () => window.removeEventListener('scroll', scrollListener);
+  }, []);
+
   return (
     <Router history={history}>
+      <Header userScroll={userScrollY} />
+
       <Switch>
         <CustomRoute component={LoginForm} exact path="/login" />
         <CustomRoute component={Register} exact path="/register" />
@@ -55,6 +72,7 @@ export default function Routes() {
         <Route component={Expired} exact path="/expired" />
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </Router>
   );
 }
