@@ -1,5 +1,6 @@
 // Login Form
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Context } from '../../context/AuthContext';
 import Error from '../Error';
 import WelcomeSignup from '../WelcomeSignup';
@@ -58,7 +59,7 @@ export default function LoginForm() {
             required
           />
           <button type="submit">ENTER</button>
-          <a href="/register">sign up</a>
+          <Link to="/register">sign up</Link>
         </form>
       </section>
       {!loginSuccess && <Error err={err} />}

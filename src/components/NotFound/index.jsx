@@ -1,5 +1,6 @@
 // Not found
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './NotFound.css';
 
 export default function NotFound() {
@@ -9,9 +10,9 @@ export default function NotFound() {
       <p>
         Go back
         {' '}
-        <a href="/">
+        <Link to="/">
           home!
-        </a>
+        </Link>
       </p>
     </section>
   );

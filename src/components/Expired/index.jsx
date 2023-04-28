@@ -1,5 +1,6 @@
 // Expired
 import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { LayoutContext } from '../../context/LayoutContext';
 import './Expired.css';
 
@@ -15,7 +16,7 @@ export default function Expired() {
         <p>
           please
           {' '}
-          <a href="/login">login again</a>
+          <Link to="/login">login again</Link>
         </p>
       </section>
     </>

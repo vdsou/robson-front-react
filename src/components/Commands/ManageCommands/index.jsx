@@ -1,6 +1,7 @@
 // Manage Commands
 /* eslint no-underscore-dangle: 0 */
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import { Context } from '../../../context/CommandsContext';
@@ -48,7 +49,7 @@ export default function ManageCommands() {
                 <p key={Math.random() * 99999}>{`${item[0]}: ${item[1]}`}</p>
               ))}
               <div className="manage-commands-buttons">
-                <a href={`/command/${result[0]._id}`}>Edit</a>
+                <Link to={`/command/${result[0]._id}`}>Edit</Link>
               </div>
             </div>
           ) : (
@@ -56,10 +57,10 @@ export default function ManageCommands() {
               Nothing found! :(
             </div>
           )}
-          <a href="/commands/insert-command" className="insert-button">
+          <Link to="/commands/insert-command" className="insert-button">
             <span>Insert a new command</span>
             <FontAwesomeIcon icon={faPlusSquare} />
-          </a>
+          </Link>
         </div>
       </section>
     </>

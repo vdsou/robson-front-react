@@ -3,6 +3,7 @@
 /* eslint no-underscore-dangle: 0 */
 
 import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Context } from '../../context/CommandsContext';
 import { LayoutContext } from '../../context/LayoutContext';
 import ListingMenu from '../ListingMenu';
@@ -24,7 +25,7 @@ export default function CommandsList() {
           {commands
           && commands.map((item) => (
             <li key={item._id}>
-              <a href={`/command/${item._id}`}>{item.command}</a>
+              <Link to={`/command/${item._id}`}>{item.command}</Link>
             </li>
           ))}
         </ul>

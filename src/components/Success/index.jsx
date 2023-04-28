@@ -1,5 +1,6 @@
 // Success
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Success.css';
 
@@ -9,7 +10,7 @@ export default function Success({ msg, link }) {
       <h3>{msg}</h3>
       {link && (
         <p className="link">
-          <a href="/commands">Go back to Commands</a>
+          <Link to="/commands">Go back to Commands</Link>
         </p>
       )}
     </div>
