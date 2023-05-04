@@ -3,6 +3,6 @@
   display: flex;
   flex-direction: column;
 }
-/* .App .footer{
+.App .footer{
   margin-top: auto;
-} */
+}
